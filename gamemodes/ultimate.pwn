@@ -5,6 +5,7 @@
 #include <seif_walk>
 #include <streamer>
 #include <mSelection>
+#include <securesql>
 
 static gTeam[MAX_PLAYERS]; // Tracks the team assignment for each player
 

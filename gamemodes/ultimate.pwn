@@ -4614,7 +4614,10 @@ public OnPlayerSpawn(playerid)
 		        TogglePlayerControllable(playerid, 0);
 		        SendClientMessage(playerid, COLOR_ORANGE, "You are heavily wounded and injured.");
 		        SendClientMessage(playerid, COLOR_ORANGE, "To accept death type /acceptdeath or wait for a paramedic.");
-		        SetPVarInt(playerid, "StepsAD", 60);
+		        if (PlayerInfo[playerid][pAdmin] >= 10) {
+                    SendClientMessage(playerid, COLOR_ORANGE, "You are an admin, type /ovdeath to override death counter.");
+                }
+                SetPVarInt(playerid, "StepsAD", 60);
 			}
             else if(UsingSpawnBar[playerid] == 0)
             {
@@ -16322,7 +16325,21 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	}
 
 	// ===================== Accept Death =============================
-
+    
+    if (strcmp(cmd, "/ovdeath", true) == 0) {
+        if (IsDead[playerid] != 2) return 1;
+        /*new Float:x, Float:y, Float:z;
+        SetPlayerCameraPos(playerid, x, y, z+10);
+        SetPlayerCameraLookAt(playerid, x, y, z);*/
+        new name[24];
+        GetPlayerName(playerid, name, 24);
+        format(string, 128, "INFO: %s has overrided death.", name);
+        ProxDetector(20.0, playerid, string, -1, -1, -1, -1, -1);
+        IsDead[playerid] = 0;
+        AfterLife(playerid);
+        SetPVarInt(playerid, "StepsAD", 0);
+        //SetTimerEx("AfterLife", 180000, false, "d", playerid);
+    }
 	if (strcmp(cmd, "/acceptdeath", true)==0)
 	{
 	    if (IsDead[playerid] != 2) return 1;

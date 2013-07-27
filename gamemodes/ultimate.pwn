@@ -6,6 +6,7 @@
 #include <streamer>
 #include <mSelection>
 #include <securesql>
+#include <FCNPC>
 
 static gTeam[MAX_PLAYERS]; // Tracks the team assignment for each player
 

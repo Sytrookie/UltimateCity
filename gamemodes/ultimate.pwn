@@ -6417,7 +6417,7 @@ public OnPlayerRequestClass(playerid, classid)
 {
 	if(gPlayerLogged[playerid] == 0 && !IsPlayerNPC(playerid))
 	{
-        PlayerPlaySound(playerid, 1097,-119.9460,23.1096,12.2238);
+        //PlayerPlaySound(playerid, 1097,-119.9460,23.1096,12.2238);
         TogglePlayerSpectating(playerid,1);
 	    if(gPlayerAccount[playerid] == 1)
 	    {

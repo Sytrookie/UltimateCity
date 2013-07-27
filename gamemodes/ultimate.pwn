@@ -4527,7 +4527,6 @@ public OnPlayerDeath(playerid, killerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
-    StopAudioStreamForPlayer(playerid);
     if (gPlayerAccount[playerid] == 0)
     {
         SendClientMessage(playerid,COLOR_YELLOW,"[SERVER]: You have been kicked for not registering.");
@@ -56298,6 +56297,7 @@ forward SpawnBarDone(playerid);
 public SpawnBarDone(playerid)
 {
     SetPlayerVirtualWorld(playerid,0);
+    StopAudioStreamForPlayer(playerid);
     if(UsingSpawnBar[playerid] == 1)
 	{
 	    SetPlayerPos(playerid,1662.6974,-2330.9395,6.5056); // Newbie Spawn

@@ -9,15 +9,10 @@
 static gTeam[MAX_PLAYERS]; // Tracks the team assignment for each player
 
 #define SCRIPT_VERSION "ULTIMATE V1"
-#define SCRIPT_MODE "ULTIMATE V1.1a"
+#define SCRIPT_MODE "ULTIMATE V1.1b"
 #define SCRIPT_TS "N/A"
 #define SCRIPT_MAP "mapname ULTIMATE CITY"
 #define SCRIPT_UPDATE "7/27/13 -- 9:00 AM"
-
-#define SQL_HOST 	"localhost"
-#define SQL_USER 	"root"
-#define SQL_PASS 	"************" // Change me for compile
-#define SQL_DB 		"samp"
 
 #define SCRIPT_OWNCARS 2000 // Ownable Vehicles Amount.
 #define SCRIPT_MAXPLAYERS 150 // Max Players.

@@ -9,10 +9,10 @@
 static gTeam[MAX_PLAYERS]; // Tracks the team assignment for each player
 
 #define SCRIPT_VERSION "ULTIMATE V1"
-#define SCRIPT_MODE "ULTIMATE V1"
+#define SCRIPT_MODE "ULTIMATE V1.1a"
 #define SCRIPT_TS "N/A"
 #define SCRIPT_MAP "mapname ULTIMATE CITY"
-#define SCRIPT_UPDATE "7/26/13 -- 7:50 PM"
+#define SCRIPT_UPDATE "7/27/13 -- 9:00 AM"
 
 #define SQL_HOST 	"localhost"
 #define SQL_USER 	"root"
@@ -2284,52 +2284,16 @@ new VehicleName[][] = {
    "Utility Trailer"
 };
 
-#define Radio_Stations   19//number of station + off
+#define Radio_Stations   2//number of station + off
 new VehicleRadioURL[][] =
 {
 	"",
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=2187022", //Chronix Radio
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=1272566", //RockNGames Radio
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=1274641",//Classic Rock Radio
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=883729",//Pink Narodna Muzika
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=1283516",//1 power
-    "http://listen.hardstyle.nu/listen.pls",//Hard Style
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=134780",//La Grosse Radio Metal
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=122694",// AC/DC radio
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=52807",// Comedy Club
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=52807",//ESC - eurovision song contest radio
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=368386",//JACK FM - ALL HIT RADIO
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=1088332",//Radio - Infinity
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=7225",//Dubstep FM
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=1281016",//Hot jamz
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=83968",//True R&B
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=627637", //30's & 40's
-	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=37833", //50's & 60's
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=674096",//70's
-    "http://yp.shoutcast.com/sbin/tunein-station.pls?id=737152"//80's
+	"http://yp.shoutcast.com/sbin/tunein-station.pls?id=124008" //Talk Radio
 };
 new VehicleRadioName[][] =
 {
 	"Off",
-	"Rock & Metal", //Chronix
-	"RockNGames", //50's & 60's
-    "Classic Rock",//Classic Rock Radio
-    "Pink Srbija",//Pink
-    "1Power",//1 power
-    "HardStyle",//Hard Style
-    "Radio Metal ",//La Grosse Radio Metal
-    "AC/DC",//AC/DC radio
-    "Comedy Club",//Comedy club
-	"EurovisionRadio",//Eurovision Song Contest Radio
-	"ALL HIT",//JACK FM - ALL HIT RADIO
-	"Infinity",//Radio - Infinity
-	"Dubstep",//Dubstep
-	"Hot Jamz",//hot jamz
-	"True R&B",//Radio Sensual
-	"30s & 40s", //30's & 40's
-	"50s & 60s", //50's & 60's
-    "70s",//70's
-    "80s"//80's
+	"Talk Radio" //Talk Radio
 };
 /*new VehicleRadioURL[][] =
 {

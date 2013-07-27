@@ -10,10 +10,10 @@
 static gTeam[MAX_PLAYERS]; // Tracks the team assignment for each player
 
 #define SCRIPT_VERSION "ULTIMATE V1"
-#define SCRIPT_MODE "ULTIMATE V1.1b"
+#define SCRIPT_MODE "ULTIMATE V1.2a"
 #define SCRIPT_TS "N/A"
 #define SCRIPT_MAP "mapname ULTIMATE CITY"
-#define SCRIPT_UPDATE "7/27/13 -- 9:00 AM"
+#define SCRIPT_UPDATE "7/27/13 -- 12:15 PM"
 
 #define SCRIPT_OWNCARS 2000 // Ownable Vehicles Amount.
 #define SCRIPT_MAXPLAYERS 150 // Max Players.
@@ -3891,6 +3891,10 @@ public OnPlayerConnect(playerid)
     new string[128];
     gPlayerLogged[playerid] = 0;
     gAdminLogged[playerid] = 0;
+    
+    // Play the theme song!
+    PlayAudioStreamForPlayer(playerid, "http://ultimategameup.com/assets/ultimatecity.mp3");
+    
 	if(!NameIsRP(plname))
 	{
 		SendClientMessage(playerid, COLOR_YELLOW2, "Server: Your name is not acceptable.");
@@ -4523,6 +4527,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
+    StopAudioStreamForPlayer(playerid);
     if (gPlayerAccount[playerid] == 0)
     {
         SendClientMessage(playerid,COLOR_YELLOW,"[SERVER]: You have been kicked for not registering.");
@@ -27350,6 +27355,26 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			}
 		}
 	}
+    if(strcmp(cmd, "/citybcast", true) == 0 || strcmp(cmd, "/cbc", true) == 0) {
+        if(IsPlayerConnected(playerid))
+	    {
+			if (PlayerInfo[playerid][pAdmin] >= 10)
+			{
+                SendClientMessage(playerid, COLOR_GREEN, "You begin broadcasting news.mp3 to the city.");
+                format(string, 256, "AdmWarning: %s has began a city broadcast of news.mp3.", playerid);
+                ABroadCast(COLOR_YELLOW,string,1);
+                for(new i=0;i<MAX_PLAYERS;i++) {
+                    if(IsPlayerConnected(i))
+                    {
+                        if(gPlayerLogged[i] == 1)
+                        {
+                            StartNewsCast(i);
+                        }
+                    }
+                }
+            }
+        }
+    }
     if(strcmp(cmd, "/ahelp", true) == 0 || strcmp(cmd, "/ah", true) == 0)
 	{
 	    if(IsPlayerConnected(playerid))
@@ -55392,6 +55417,26 @@ public StartRadio(playerid)
     }
     return 1;
 }
+
+forward StartNewsCast(playerid);
+public StartNewsCast(playerid) {
+    if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT) {
+        SendClientMessage(playerid, COLOR_GREEN, "Your internal UltimateChip™ radio turns on for a city broadcast..");
+        PlayerRadio[playerid] = PlayAudioStreamForPlayer(playerid, "http://ultimategameup.com/assets/news.mp3", 0.0, 0.0, 0.0, 50.0, 0);
+    } else {
+        if(TogRadio[playerid] == 0) {
+            TogRadio[playerid] = 1;
+            SendClientMessage(playerid, COLOR_GREEN, "The radio turns on for a city broadcast..");
+            PlayerRadio[playerid] = PlayAudioStreamForPlayer(playerid, "http://ultimategameup.com/assets/news.mp3", 0.0, 0.0, 0.0, 50.0, 0);
+        } else {
+            StopAudioStreamForPlayer(playerid);
+            SendClientMessage(playerid, COLOR_GREEN, "The radio is interrupted for a city broadcast..");
+            PlayerRadio[playerid] = PlayAudioStreamForPlayer(playerid, "http://ultimategameup.com/assets/news.mp3", 0.0, 0.0, 0.0, 50.0, 0);
+        }
+    }
+}
+
+
 
 forward RankRequire(playerid);
 public RankRequire(playerid)

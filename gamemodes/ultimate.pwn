@@ -13621,7 +13621,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Please register on forum.ultimategameup.com! If you don't get registration e-mail PM lead admin.");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Did you know you can login on our website with your in-game information? [ultimategameup.com]");
 	        }
 	    }
 	}
@@ -13631,7 +13631,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Have you seen a player rulebreaking? Report him on our forums right away! [forum.ultimategameup.com]");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Someone breaking the rules? Report them right away!");
 	        }
 	    }
 	}
@@ -13641,7 +13641,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Make sure to obey all the server rules, otherwise you will be punished!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Do your best to obey the rules, we're watching.");
     		}
 	    }
 	}
@@ -13651,7 +13651,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Do not ask for any positions in the staff team! Use the forums to apply ![forum.ultimategameup.com]");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Interested in a staff position? Contact an admin!");
 	        }
 	    }
 	}
@@ -13661,7 +13661,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Do you want to join a faction, such as the LSPD or the EMS? Feel free to apply on the forums!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Want to join a faction like the LSPD or EMS? Contact the leader or an admin!");
 	        }
 	    }
 	}
@@ -13671,7 +13671,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Use /helpme if you are in need of any help!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: /helpme if you need help!");
 	        }
 	    }
 	}
@@ -13681,7 +13681,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Have you noticed any bugs or exploits? Do not abuse it! Use the forums to report them!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Find a bug or exploit? Report it to an admin immediately for rewards or face judgement!");
 	        }
 	    }
 	}
@@ -13691,7 +13691,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Do you have a suggestion that might improove our server? Make a thread on the forums!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Suggestions? Contact an admin!");
 	        }
 	    }
 	}
@@ -13701,7 +13701,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Have you lost something OOC-ly? Make a refund request on the forums right away!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Lost something unfairly OOC-ly? Contact an admin!");
 	        }
 	    }
 	}
@@ -13711,7 +13711,7 @@ public AutoMsg()
 		{
 		    if(BlockBot[everyone] == 0)
 		    {
-	        	SendClientMessage(everyone, COLOR_ORANGE, "ULTIMATE Bot: Be sure to check our RP guides on the forums! They will surely help you out!");
+	        	SendClientMessage(everyone, COLOR_ORANGE, "[Ultimate City]: Need help with RP or learning the way of the city? Contact an admin, helper or experienced player!");
 	        }
 	    }
 	}
@@ -34505,11 +34505,11 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		strcat(bstring, mstring, sizeof(mstring));
     	if(BlockBot[playerid] == 0)
     	{
-			format(mstring,sizeof(mstring), "{55EE55}ULTIMATE Bot (ON)\n");
+			format(mstring,sizeof(mstring), "{55EE55}[Ultimate City] (ON)\n");
 		}
 		else
 		{
-			format(mstring,sizeof(mstring), "{990000}ULTIMATE Bot (OFF)\n");
+			format(mstring,sizeof(mstring), "{990000}[Ultimate City] (OFF)\n");
 		}
 		strcat(bstring, mstring, sizeof(mstring));
     	if(BlockHelperChat[playerid] == 0)
@@ -34686,12 +34686,12 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
 		if(BlockBot[playerid] == 1)
 		{
-    		SendClientMessage(playerid,COLOR_WHITE,"ULTIMATE bot is now ON.");
+    		SendClientMessage(playerid,COLOR_WHITE,"[Ultimate City] is now ON.");
 			BlockBot[playerid] = 0;
 		}
 		if(BlockBot[playerid] == 0)
 		{
-    		SendClientMessage(playerid,COLOR_WHITE,"ULTIMATE bot is now OFF.");
+    		SendClientMessage(playerid,COLOR_WHITE,"[Ultimate City] is now OFF.");
 			BlockBot[playerid] = 1;
 		}
 		return 1;
@@ -49774,7 +49774,7 @@ public AntiCheat()
 			            Cheating[i] = 1;//player's weapons won't save
 				        format(string, sizeof(string), "You were kicked because you attemped to hack weapon id %d", weaponid);
 					    SendClientMessage(i,COLOR_LIGHTRED,string);
-				        format(string, sizeof(string), "AdmWarn: %s was kicked for weapon hacks by ULTIMATE bot.", sendername);
+				        format(string, sizeof(string), "AdmWarn: %s was kicked for weapon hacks by [Ultimate City].", sendername);
 				        SendClientMessageToAll(COLOR_LIGHTRED, string);
 				        KickLog("Server",sendername, "Hacking weapons");
 				        Kick(i);
@@ -53963,11 +53963,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			strcat(string, mstring, sizeof(mstring));
 	    	if(BlockBot[playerid] == 0)
 	    	{
-				format(mstring,sizeof(mstring), "{55EE55}ULTIMATE Bot (ON)\n");
+				format(mstring,sizeof(mstring), "{55EE55}[Ultimate City] (ON)\n");
 			}
 			else
 			{
-				format(mstring,sizeof(mstring), "{990000}ULTIMATE Bot (OFF)\n");
+				format(mstring,sizeof(mstring), "{990000}[Ultimate City] (OFF)\n");
 			}
 			strcat(string, mstring, sizeof(mstring));
 	    	if(BlockHelperChat[playerid] == 0)

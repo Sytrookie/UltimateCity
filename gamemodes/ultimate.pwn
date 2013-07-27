@@ -16,7 +16,7 @@ static gTeam[MAX_PLAYERS]; // Tracks the team assignment for each player
 
 #define SQL_HOST 	"localhost"
 #define SQL_USER 	"root"
-#define SQL_PASS 	"IloveAshten1"
+#define SQL_PASS 	"************" // Change me for compile
 #define SQL_DB 		"samp"
 
 #define SCRIPT_OWNCARS 2000 // Ownable Vehicles Amount.
